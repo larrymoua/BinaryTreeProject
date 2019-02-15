@@ -13,11 +13,9 @@ namespace BinaryTreeProject
         {
             Node node;
             Node temp = new Node(data);
-
             if (Root == null)
             {
                 Root = temp;
-
             }
             node = Root;
             while(node.Right != null)
@@ -35,10 +33,69 @@ namespace BinaryTreeProject
             else if (temp.data < node.data && node.Left == null)
             {
                node.Left = temp;                  
-            }
-            
+            }          
         }
+        public void Search(int data)
+        {
+            Node node;
+            Node temp = new Node(data);
+            node = Root;
 
+            while (node != null)
+            {
+                if ((temp.data == node.data) || (temp.data == node.Left.data) || (temp.data == node.Left.data))
+                {
+                    Console.WriteLine($"We Found {data}!");
+                    Console.ReadKey();
+                    break;
+                }
+                else if (temp.data < node.data)
+                {
+                    node = node.Left;
+                    if (temp.data > node.data)
+                    {
+                       if(node.Right == null)
+                       {
+                            Console.WriteLine($"{data} does not exist in this tree!");
+                            Console.ReadKey();
+                            break;
+                       }
+                    }
+                    else if (temp.data < node.data)
+                    {
+                        if (node.Left == null)
+                        {
+                            Console.WriteLine($"{data} does not exist in this tree!");
+                            Console.ReadKey();
+                            break;
+                        }
+                    }
+                }
+                else if (temp.data > node.data)
+                {
+                    node = node.Right;
+                    if (temp.data > node.data)
+                    {
+                        if (node.Right == null)
+                        {
+                            Console.WriteLine($"{data} does not exist in this tree!");
+                            Console.ReadKey();
+                            break;
+                        }
+                    }
+                    else if (temp.data < node.data)
+                    {
+                        if (node.Left == null)
+                        {
+                            Console.WriteLine($"{data} does not exist in this tree!");
+                            Console.ReadKey();
+                            break;
+                        }
+                    }
+
+
+                }   }
+        }
     }
 }
 

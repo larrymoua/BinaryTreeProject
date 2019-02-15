@@ -16,7 +16,11 @@ namespace BinaryTreeProject
             linked.Add(19);
             linked.Add(13);
             linked.Add(15);
+            linked.Add(11);
             linked.Add(12);
+            linked.Search(15);
+            linked.Search(19);
+            linked.Search(10);
 
 
         }
