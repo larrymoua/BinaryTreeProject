@@ -13,33 +13,32 @@ namespace BinaryTreeProject
         {
             Node node;
             Node temp = new Node(data);
-            if(Root == null)
+
+            if (Root == null)
             {
                 Root = temp;
-                node = Root;
-            }        
-            else if (Root.Right == null && temp.data > Root.data)
-            {
-                    Root.Right = temp;
-            }
-            else if (Root.Left == null && temp.data < Root.data)
-            {
-                  Root.Left = temp;       
-            }
 
-            else if(temp.data > Root.data && Root.Left != null && Root.Right != null)
-            {
-                Root = Root.Right;
-                Add(temp.data);
             }
-
-            else if (temp.data < Root.data && Root.Left != null && Root.Right != null)
+            node = Root;
+            while(node.Right != null)
             {
-                Root = Root.Left;
-                Add(temp.data);
+               node = node.Right;         
             }
-
+            while (node.Left != null)
+            {
+               node = node.Left;
+            }
+            if (temp.data > node.data && node.Right == null)
+            {
+               node.Right = temp;                   
+            }
+            else if (temp.data < node.data && node.Left == null)
+            {
+               node.Left = temp;                  
+            }
+            
         }
 
     }
 }
+

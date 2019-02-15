@@ -13,9 +13,11 @@ namespace BinaryTreeProject
 
             LinkedList linked = new LinkedList();
             linked.Add(20);
-            linked.Add(10);
-            linked.Add(30);
-            linked.Add(40);
+            linked.Add(19);
+            linked.Add(13);
+            linked.Add(15);
+            linked.Add(12);
+
 
         }
     }
