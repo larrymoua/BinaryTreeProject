@@ -32,11 +32,11 @@ namespace BinaryTreeProject
                     node = node.Left;
                 }
             }
-            if (temp.data > node.data && node.Right == null)
+            if (temp.data > node.data)
             {
                node.Right = temp;                   
             }
-            else if (temp.data < node.data && node.Left == null)
+            else if (temp.data < node.data)
             {
                node.Left = temp;                  
             }          
