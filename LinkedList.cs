@@ -18,13 +18,19 @@ namespace BinaryTreeProject
                 Root = temp;
             }
             node = Root;
-            while(node.Right != null)
+            if(temp.data > Root.data)
             {
-               node = node.Right;         
+                while (node.Right != null)
+                {
+                    node = node.Right;
+                }
             }
-            while (node.Left != null)
+            if(temp.data < Root.data)
             {
-               node = node.Left;
+                while (node.Left != null)
+                {
+                    node = node.Left;
+                }
             }
             if (temp.data > node.data && node.Right == null)
             {
@@ -54,12 +60,12 @@ namespace BinaryTreeProject
                     node = node.Left;
                     if (temp.data > node.data)
                     {
-                       if(node.Right == null)
-                       {
+                        if (node.Right == null)
+                        {
                             Console.WriteLine($"{data} does not exist in this tree!");
                             Console.ReadKey();
                             break;
-                       }
+                        }
                     }
                     else if (temp.data < node.data)
                     {
@@ -92,9 +98,8 @@ namespace BinaryTreeProject
                             break;
                         }
                     }
-
-
-                }   }
+                }
+            }   
         }
     }
 }
