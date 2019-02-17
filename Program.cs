@@ -21,6 +21,7 @@ namespace BinaryTreeProject
             linked.Search(15);
             linked.Search(19);
             linked.Search(10);
+            linked.Search(333);
 
 
         }

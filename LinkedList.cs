@@ -25,7 +25,7 @@ namespace BinaryTreeProject
                     node = node.Right;
                 }
             }
-            if(temp.data < Root.data)
+            else if(temp.data < Root.data)
             {
                 while (node.Left != null)
                 {
